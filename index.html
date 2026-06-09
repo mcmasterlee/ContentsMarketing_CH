@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>크리에이티브 한입 · 2026 발표 아카이브</title>
-  <meta name="description" content="크리에이티브 한입 2026년 3월~6월 발표 아카이브 웹앱" />
+  <meta name="description" content="2026년 3월부터 6월까지의 Creative Bite 발표를 주제별 상세 페이지로 연결하는 웹앱" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
@@ -16,44 +16,38 @@
     <span class="orb orb-b"></span>
     <span class="orb orb-c"></span>
   </div>
-
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="맨 위로 이동">
+      <a class="brand" href="#top">
         <span class="brand-mark">Creative Bite</span>
         <strong>크리에이티브 한입</strong>
       </a>
-      <nav class="site-nav" aria-label="주요 메뉴">
-        <a href="#archive">발표 아카이브</a>
-        <a href="#archive">기록 보기</a>
+      <nav class="site-nav">
+        <a href="#archive" class="is-current">발표 아카이브</a>
       </nav>
-      <button id="navToggle" class="nav-toggle" type="button" aria-label="모바일 메뉴 열기" aria-expanded="false">☰</button>
     </div>
   </header>
-
   <main id="top">
     <section class="hero reveal">
       <div class="container hero-inner">
         <p class="hero-kicker">2026.03 — 2026.06</p>
         <h1>크리에이티브 한입<br /><span>발표 아카이브</span></h1>
-        <p class="hero-desc">
-          2026년 3월부터 6월까지 진행된 발표를 한 화면에서 바로 확인할 수 있도록 정리한 아카이브입니다.
-          각 카드에서 발표 핵심, 주요 포인트, 회고 질문, 자료 링크까지 바로 펼쳐볼 수 있습니다.
-        </p>
+        <p class="hero-desc">기존의 깔끔한 메인 구성을 유지하면서, 각 발표 카드마다 별도의 상세 페이지로 이동하는 버튼을 추가했습니다. 각 상세 페이지에서는 발표 내용을 웹앱 형태로 다시 정리해 바로 읽을 수 있고, 원본 자료 열기와 다운로드도 함께 제공됩니다.</p>
         <div class="hero-stats">
-          <article class="stat-card"><strong>5</strong><span>Sessions</span></article>
-          <article class="stat-card"><strong>4</strong><span>PDF 자료</span></article>
-          <article class="stat-card"><strong>2</strong><span>Web Links</span></article>
+          <article class="stat-card"><strong>5</strong><span>발표 주제</span></article>
+          <article class="stat-card"><strong>5</strong><span>상세 페이지</span></article>
+          <article class="stat-card"><strong>4</strong><span>PDF 다운로드</span></article>
+          <article class="stat-card"><strong>2</strong><span>웹앱 바로가기</span></article>
         </div>
       </div>
     </section>
-
-    <section id="archive" class="archive-section reveal">
+    <section id="archive" class="archive-section">
       <div class="container">
-        <div class="archive-top">
+        <div class="archive-top reveal">
           <div>
             <p class="section-kicker">Archive</p>
             <h2>발표 기록</h2>
+            <p>카드에서 바로 상세 페이지로 이동해 발표 내용을 웹 문서처럼 읽을 수 있습니다.</p>
           </div>
           <div class="filter-group" role="tablist" aria-label="월별 필터">
             <button class="filter-chip is-active" type="button" data-filter="all">전체</button>
@@ -63,13 +57,98 @@
             <button class="filter-chip" type="button" data-filter="06">6월</button>
           </div>
         </div>
-
         <div id="sessionGrid" class="session-grid"></div>
       </div>
     </section>
   </main>
+  <script>
+const filters = document.querySelectorAll('.filter-chip');
+const grid = document.getElementById('sessionGrid');
+const sessions = [{"id": "s1", "slug": "session-01-branding.html", "month": "03", "date": "2026.03.10", "time": "11:00", "type": "브랜딩", "title": "지학사 교과서 브랜딩 래퍼런스", "speaker": "교재마케팅 Cell · 김남우 CP", "summary": "“진심이 짓는다”라는 브랜드 메시지를 중심으로 교사, 교과서, 학생·학부모의 여정을 하나의 서사로 연결한 발표.", "overview": "교과서를 단순한 제품 소개가 아니라 교육 현장을 함께 만드는 경험으로 재해석한 발표입니다. 교사의 생애 주기, 교과서의 콘텐츠 확장, 학생·학부모와 이어지는 성장 구조를 브랜드 언어로 번역했습니다.", "cover": "https://www.genspark.ai/api/files/s/9oQ9Ynzz", "sheet": "https://www.genspark.ai/api/files/s/b9rLdTDA", "tags": ["진심이 짓는다", "교사 여정", "교과서 확장", "브랜드 서사"], "sections": [["브랜드 메시지의 출발점", "발표의 중심은 “진심이 짓는다”입니다. 기능이나 스펙보다 교육을 대하는 태도를 브랜드 핵심으로 두고, 메시지 전체를 감정과 철학의 언어로 설계합니다."], ["선생님의 여정 설계", "임용 준비, 첫 수업, 수업 운영, 졸업식까지 교사의 시간을 세밀하게 관찰합니다. 브랜드는 특정 캠페인이 아니라 선생님의 긴 여정에 함께하는 조력자로 정의됩니다."], ["교과서 경험의 콘텐츠화", "교과서를 ASMR, 장르 영화제, 4컷 만화, 올림픽형 콘텐츠처럼 새롭게 번역합니다. 익숙한 학습 자료를 다시 보고 싶게 만드는 콘텐츠 전략이 핵심입니다."], ["T-Solution과 디지털 확장", "AI 디지털 교과서와 T-Solution을 통해 종이책 이후의 경험까지 연결합니다. 브랜드는 교재를 넘어서 수업 도구와 미래 교육 환경으로 확장됩니다."], ["학생·학부모 접점 확대", "장학, 상담, 문해력 강연 등 학생과 학부모로 이어지는 접점을 함께 설계합니다. 학교 안의 브랜드가 가정과 지역사회까지 확장되는 구조를 보여줍니다."], ["채널 운영의 관점", "유튜브, 인스타그램, 커뮤니티, 뉴스레터 등 여러 채널을 쓰더라도 메시지의 중심은 하나입니다. 결국 중요한 것은 채널 수가 아니라 진심의 일관성입니다."]], "highlights": ["브랜드는 기능보다 태도의 언어로 기억된다", "교사의 생애 여정을 함께 설계하는 브랜드", "교과서는 콘텐츠로 다시 태어날 수 있다", "디지털 확장은 제품 확장이 아니라 경험 확장이다"], "points": ["브랜드 메시지를 감정과 여정 중심으로 설계", "교과서 경험을 다양한 콘텐츠 포맷으로 번역", "AI 디지털 교과서와 연계한 미래 확장성 제시", "학생·학부모까지 연결되는 교육 브랜드 구조 제안"], "questions": ["우리 브랜드에서 가장 먼저 정리해야 할 진정성의 언어는 무엇인가?", "교사·학생·학부모를 하나의 경험으로 잇는 콘텐츠는 무엇이 될 수 있는가?", "제품 소개를 브랜드 서사로 전환하려면 어떤 표현이 필요한가?"], "links": [["원본 PDF 열기", "https://www.genspark.ai/api/files/s/IzLdm8oP"], ["자료 다운로드", "https://www.genspark.ai/api/files/s/IzLdm8oP"]]}, {"id": "s2", "slug": "session-02-chatbot.html", "month": "04", "date": "2026.04.07", "time": "11:00", "type": "AI 활용", "title": "AI 활용 챗봇 제작기", "speaker": "플랫폼마케팅 Cell · 이태욱 CP", "summary": "반복 문의를 줄이기 위해 비전공자가 실제 서비스 가능한 챗봇을 기획·구축·배포한 과정을 정리한 발표.", "overview": "이 발표는 단순히 AI 도구를 소개하는 것이 아니라, 실무 문제를 어떻게 정의하고 어떤 데이터 구조로 챗봇 품질을 높였는지를 보여줍니다. 기획, 데이터 정리, 구현, 배포, 운영까지 한 흐름으로 확인할 수 있습니다.", "cover": "https://www.genspark.ai/api/files/s/4UhWfB0h", "sheet": "https://www.genspark.ai/api/files/s/XIqtCAbv", "tags": ["챗봇", "자동화", "실무 구현", "운영"], "sections": [["문제 발견", "스콘 e-book과 PDF 관련 문의가 반복되면서 응대 효율 문제가 커졌습니다. 챗봇은 단순한 실험이 아니라 실제 고객 문의를 줄이기 위한 해법으로 출발합니다."], ["문의 유형 분류", "어떤 문의는 챗봇이 바로 답할 수 있고, 어떤 문의는 내부 확인이 필요합니다. 이 구분이 정확할수록 챗봇의 신뢰도와 운영 효율이 높아집니다."], ["도구 선택 전략", "ChatGPT, Claude, Genspark, Google AI Studio를 단계별 용도에 맞춰 조합합니다. 중요한 것은 최신 도구보다 업무 단계에 맞는 배치입니다."], ["데이터 구조화", "가입 경로, 자료 제공 범위, 교재 정보 같은 실무 데이터를 구조화해 챗봇 답변 기반을 만듭니다. AI 품질의 핵심은 결국 데이터 정리 수준입니다."], ["구현과 배포", "API 키 노출 이슈, 연결 오류, 배포 환경 문제를 해결하며 실제 웹앱 형태까지 구현합니다. 서비스 가능한 형태로 배포했다는 점이 이 발표의 강점입니다."], ["운영 시야", "챗봇은 배포 후가 더 중요합니다. 관리자 페이지, 답변 업데이트, 모델 업그레이드 계획까지 운영 관점이 함께 제시됩니다."]], "highlights": ["도구보다 먼저 정리해야 할 것은 문제 정의다", "챗봇의 품질은 데이터 구조에서 결정된다", "실험에서 끝나지 않고 배포 가능한 서비스로 연결했다", "운영까지 고려해야 진짜 실무형 AI 프로젝트가 된다"], "points": ["반복 문의 자동화와 이관 기준을 함께 설계", "여러 AI 도구를 단계별로 조합한 실무 전략 제시", "GitHub·Vercel 기반 실제 배포 경험 포함", "사후 운영과 업데이트 체계까지 고려한 설계"], "questions": ["우리 조직에서 가장 먼저 자동화할 수 있는 반복 문의는 무엇인가?", "정확한 답변을 위해 어떤 데이터부터 표준화해야 하는가?", "파일럿이 아닌 운영형 프로젝트로 가기 위해 필요한 조건은 무엇인가?"], "links": [["원본 PDF 열기", "https://www.genspark.ai/api/files/s/ui6oKfRd"], ["자료 다운로드", "https://www.genspark.ai/api/files/s/ui6oKfRd"], ["챗봇 바로가기", "https://visang-chatbot.vercel.app/"]]}, {"id": "s3", "slug": "session-03-aidea.html", "month": "04", "date": "2026.04.07", "time": "11:30", "type": "팀/웹앱", "title": "AI디어 (AIdea) · 비바코드 2026", "speaker": "플랫폼마케팅 Cell · 임미정 CP", "summary": "AI를 활용해 마케팅 업무를 실행에서 전략으로 전환하겠다는 목표를 웹앱 방식으로 소개한 발표.", "overview": "팀 소개, 핵심 목표, 레퍼런스, 일정, 협업 태도를 웹앱 구조로 자연스럽게 보여준 사례입니다. 발표 자료 자체가 경험형 인터페이스였기 때문에, 이번 아카이브의 상세 페이지 역시 그 흐름을 이어 웹 문서형으로 구성했습니다.", "cover": "", "sheet": "", "tags": ["AIdea", "싱글페이지", "전략 전환", "레퍼런스"], "sections": [["팀의 선언", "AI디어는 아이디어를 AI로 현실로 만드는 팀이라는 한 문장으로 시작합니다. 출발점부터 명확해서 페이지 전체가 같은 방향으로 읽힙니다."], ["세 가지 핵심 목표", "콘텐츠 기획·제작 자동화, 데이터 기반 성과 분석, 반복 업무 최소화라는 세 축이 발표의 중심입니다. 목표 정의가 간결해 전체 구조를 빠르게 이해할 수 있습니다."], ["레퍼런스 큐레이션", "피그마 버즈, 태블로, ChatGPT·Claude·Gemini, 나노바나나, Sora·Runway 등 다양한 레퍼런스가 이어집니다. 단순 나열이 아니라 어떤 업무를 바꿀지 맥락과 함께 제시됩니다."], ["웹앱 자체가 발표 방식", "문서가 아닌 싱글 페이지 웹앱을 통해 발표 내용을 전달합니다. 보는 방식과 전달 내용이 일치해 설득력이 높습니다."], ["활동 로드맵", "4월부터 11월까지의 일정이 단계별로 정리되어 프로젝트 로드맵처럼 읽힙니다. 탐색에서 적용까지의 흐름이 분명합니다."], ["AI와 사람의 협업 문화", "Special Thanks와 협업 레퍼런스를 통해 도구 사용을 넘어 새로운 협업 태도를 보여줍니다. AI를 동료처럼 다루는 감각이 인상적입니다."]], "highlights": ["아이디어 → 실행 → 효율 → 전략", "발표 자료가 곧 웹 경험이 되는 구조", "레퍼런스를 실행 언어로 번역한 팀 소개", "사람과 AI가 함께 만드는 협업 문화"], "points": ["팀 목표를 한눈에 읽히는 웹앱 구조로 정리", "실무형 AI 레퍼런스를 맥락 있게 큐레이션", "발표 방식 자체를 경험형 인터페이스로 설계", "이번 아카이브 상세 페이지의 기준 무드가 된 발표"], "questions": ["우리 팀은 AI를 통해 어떤 업무를 전략 업무로 바꾸고 싶은가?", "레퍼런스를 수집하는 단계에서 실행 단계로 넘어가기 위한 장치는 무엇인가?", "문서 대신 웹앱으로 발표할 때 전달 경험은 어떻게 달라지는가?"], "links": [["AIdea 웹앱 보기", "https://roraa21.github.io/AIdea/"]]}, {"id": "s4", "slug": "session-04-goods.html", "month": "05", "date": "2026.05.05", "time": "11:00", "type": "마케팅", "title": "굿즈 마케팅 가이드", "speaker": "비바샘마케팅 Cell · 조원진 CP", "summary": "굿즈를 브랜드 팬덤과 관계 형성의 도구로 정의하고, 타깃·아이템·제작·디자인 원칙을 체계화한 발표.", "overview": "굿즈를 예쁜 사은품이 아니라 브랜드 아이덴티티를 확장하는 매개체로 다룬 발표입니다. 타깃 세분화부터 제작사 체크리스트, 디자인 원칙까지 실무에 바로 적용할 수 있는 구조로 정리되어 있습니다.", "cover": "https://www.genspark.ai/api/files/s/DLvQC9Pe", "sheet": "https://www.genspark.ai/api/files/s/cSOfjOAx", "tags": ["굿즈", "타깃 세분화", "디자인 원칙", "체크리스트"], "sections": [["굿즈의 정의", "굿즈는 단순 증정품이 아니라 브랜드 정체성을 담는 파생 상품으로 제시됩니다. 사용성과 감정적 연결을 동시에 만드는 것이 핵심입니다."], ["5단계 프로세스", "타깃 세분화, 아이템 선정, 업체 서칭, 기획·디자인, 제작·발주라는 흐름으로 정리됩니다. 감이 아니라 프로세스로 접근하는 실무 감각이 돋보입니다."], ["타깃별 전략 차별화", "VIP, 관심 고객, 잠재 고객으로 구분해 예산과 아이템을 다르게 설계합니다. 누구에게 주는지에 따라 굿즈의 역할이 달라진다는 관점이 중요합니다."], ["아이템 라인업 설계", "프리미엄형, 실용형, 확산형으로 나뉜 아이템 구성이 제안됩니다. 굿즈를 단순히 예산으로만 고르지 않고 목적과 맥락으로 고릅니다."], ["업체 선정 체크리스트", "품질, 단가, 납기, 패키징, 샘플 확인 등 실행 단계에서 발생할 수 있는 리스크를 미리 점검합니다. 예쁜 시안보다 안정적인 실행이 더 중요하다는 메시지가 분명합니다."], ["비바샘다운 디자인", "로고를 과하게 드러내지 않고 비버샘 캐릭터와 블루톤의 톤앤매너를 자연스럽게 녹여냅니다. 결국 “소장하고 싶은 굿즈”가 되어야 한다는 관점입니다."]], "highlights": ["굿즈는 팬덤의 시작점이 될 수 있다", "같은 굿즈라도 타깃에 따라 전략이 달라진다", "체크리스트는 실행의 완성도를 만든다", "브랜드 노출보다 사용 경험이 먼저다"], "points": ["굿즈를 브랜드 관계 형성 도구로 재정의", "VIP·관심·잠재 고객별 전략 분리", "제작사 선정 시 실무 체크리스트 강화", "자연스러운 브랜드 표현을 위한 디자인 원칙 제시"], "questions": ["우리 브랜드 굿즈는 어떤 감정을 남겨야 하는가?", "타깃에 따라 아이템과 예산을 나누는 기준은 무엇이어야 하는가?", "브랜드 노출과 실제 사용성을 함께 만족시키는 표현은 무엇인가?"], "links": [["원본 PDF 열기", "https://www.genspark.ai/api/files/s/mjY7ss4R"], ["자료 다운로드", "https://www.genspark.ai/api/files/s/mjY7ss4R"]]}, {"id": "s5", "slug": "session-05-bis.html", "month": "06", "date": "2026.06.02", "time": "11:00", "type": "브랜드 전략", "title": "2026 비바샘 BIS", "speaker": "비바샘마케팅 Cell · 신명주 CP", "summary": "비전·미션·브랜드 정의·핵심가치를 한 흐름으로 정리해 비바샘의 정체성을 구조화한 발표.", "overview": "비바샘을 “교사를 가장 잘 이해하는 교수·학습 플랫폼”으로 정의하고, 브랜드가 지향해야 할 비전과 약속을 한 문장씩 선명하게 정리한 발표입니다. 전략 문서를 서비스 언어로 번역하기 좋은 구조를 가지고 있습니다.", "cover": "https://www.genspark.ai/api/files/s/xaPbjAXh", "sheet": "https://www.genspark.ai/api/files/s/4XzErFbE", "tags": ["BIS", "비전", "미션", "핵심가치"], "sections": [["브랜드 비전", "비바샘은 교수·학습 원스톱 생태계를 구축해 교사가 가장 먼저 찾는 파트너가 되는 것을 비전으로 둡니다. 플랫폼을 넘어 생태계라는 단어를 쓰는 점이 중요합니다."], ["브랜드 미션", "선생님이 원하는 교육을 실현하는 데 필요한 모든 것을 지원한다는 문장으로 미션이 정리됩니다. 기능 제공보다 교육 실현의 조력자 역할을 강조합니다."], ["브랜드 정의", "“선생님을 가장 잘 이해하는 교수·학습 플랫폼”이라는 정의가 발표의 중심축입니다. 누구를 위해 존재하는지, 어떤 태도를 갖는지 한 문장으로 명확히 보여줍니다."], ["핵심가치", "현장성, 혁신, 동행이라는 세 가지 가치가 제시됩니다. 실용성, AI·에듀테크, 여정 지원이 각각의 가치와 연결됩니다."], ["에센스와 약속", "상상하던 교육의 실현이라는 브랜드 에센스가 약속의 문장으로 이어집니다. 추상적인 브랜드 표현을 서비스 경험 언어로 옮기기 쉽도록 정리된 구조입니다."], ["태그라인과 슬로건", "“선생님 곁의 가장 완벽한 교육 파트너”, “내일을 위한 매일의 선택” 등의 문장이 브랜드 말투를 완성합니다. 전략이 곧 문장 시스템으로 정리된 사례입니다."]], "highlights": ["원스톱 교수·학습 생태계", "교사를 가장 잘 이해하는 플랫폼", "현장성 · 혁신 · 동행", "전략 문장이 곧 브랜드 경험의 기준이 된다"], "points": ["비전·미션·정의를 한 흐름으로 명확히 연결", "교사 이해를 브랜드 중심축으로 설정", "핵심가치를 서비스 방향성과 연결", "태그라인·슬로건까지 일관된 메시지 시스템 구축"], "questions": ["우리 서비스가 실제로 가장 잘 전달하는 브랜드 가치는 무엇인가?", "교사가 가장 먼저 찾는 파트너가 되기 위해 보완할 경험은 무엇인가?", "브랜드 정의를 실제 기능과 콘텐츠로 바꿀 때 필요한 우선순위는 무엇인가?"], "links": [["원본 PDF 열기", "https://www.genspark.ai/api/files/s/uDLeTXw8"], ["자료 다운로드", "https://www.genspark.ai/api/files/s/uDLeTXw8"]]}];
 
-  <script src="./script.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+function cardTemplate(session){
+  const resourceBtn = session.links && session.links.length
+    ? `<a class="topic-btn secondary" href="${session.links[0][1]}" target="_blank" rel="noreferrer">${session.links[0][0].includes('웹앱') ? '웹앱 바로가기' : '원본 자료'}</a>`
+    : '';
+  const chatbotLink = session.links && session.links.length
+    ? session.links.find(link => link[0].includes('챗봇'))
+    : null;
+  const chatbotBtn = chatbotLink
+    ? `<a class="topic-btn secondary" href="${chatbotLink[1]}" target="_blank" rel="noreferrer">챗봇 바로가기</a>`
+    : '';
+  const points = session.points ? session.points.slice(0, 3).map(point => `<li>${point}</li>`).join('') : '';
+  return `
+    <article class="session-card reveal">
+      <div class="session-shell">
+        <aside class="session-aside">
+          <span class="month-chip">${session.month}월</span>
+          <p class="session-date">${session.date}</p>
+          <p class="session-time">${session.time}</p>
+          <span class="type-chip">${session.type}</span>
+        </aside>
+        <div class="session-main">
+          <div class="session-header">
+            <div>
+              <h3 class="session-title">${session.title}</h3>
+              <p class="session-speaker">${session.speaker}</p>
+            </div>
+            <button class="toggle-btn" type="button">자세히 보기</button>
+          </div>
+          <p class="session-summary">${session.summary}</p>
+          <div class="tag-list">${session.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+          <div class="session-detail">
+            <div class="detail-grid">
+              <section class="detail-panel">
+                <h4>발표 개요</h4>
+                <p>${session.overview}</p>
+              </section>
+              <section class="detail-panel">
+                <h4>핵심 포인트</h4>
+                <ul class="bullet-list">${points}</ul>
+              </section>
+            </div>
+          </div>
+          <div class="session-actions">
+            <a class="topic-btn secondary" href="./${session.slug}">발표 기록 자세히 보기</a>
+            ${resourceBtn}
+            ${chatbotBtn}
+          </div>
+        </div>
+      </div>
+    </article>`;
+}
+
+function render(filter='all'){
+  const filtered = filter === 'all' ? sessions : sessions.filter(s => s.month === filter);
+  grid.innerHTML = filtered.map(cardTemplate).join('');
+  grid.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.session-card');
+      const opened = card.classList.toggle('is-open');
+      btn.textContent = opened ? '접기' : '자세히 보기';
+    });
+  });
+  observeReveals();
+}
+
+filters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filters.forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    render(btn.dataset.filter);
+  });
+});
+
+function observeReveals(){
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('is-visible'); });
+  }, {threshold:.12});
+  els.forEach(el => io.observe(el));
+}
+
+render();
+observeReveals();
+</script>
 </body>
 </html>
