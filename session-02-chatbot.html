@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Noto+Sans+KR:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+  </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">Creative Bite</span>
+        <strong>크리에이티브 한입</strong>
+      </a>
+      <nav class="site-nav">
+        <a href="./index.html" class="is-current">발표 아카이브</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <div class="container">
+      <div class="back-row reveal">
+        <a class="back-btn secondary" href="./index.html">← 발표 아카이브로 돌아가기</a>
+        <div class="tag-list"><span class="tag">챗봇</span><span class="tag">자동화</span><span class="tag">실무 구현</span><span class="tag">운영</span></div>
+      </div>
+      <section class="page-head reveal">
+        <article class="page-hero">
+          <div class="meta-row">
+            <span class="meta-chip">04월</span>
+            <span class="meta-chip">2026.04.07 · 11:00</span>
+            <span class="meta-chip">AI 활용</span>
+          </div>
+          <p class="page-kicker">Presentation Record 02</p>
+          <h1 class="page-title">AI 활용 챗봇 제작기</h1>
+          <p class="page-record-label">발표 기록</p>
+          <p class="page-speaker">플랫폼마케팅 Cell · 이태욱 CP</p>
+          <p class="page-summary">반복 문의를 줄이기 위해 비전공자가 실제 서비스 가능한 챗봇을 기획·구축·배포한 과정을 정리한 발표.</p>
+          <p class="page-desc">이 발표는 단순히 AI 도구를 소개하는 것이 아니라, 실무 문제를 어떻게 정의하고 어떤 데이터 구조로 챗봇 품질을 높였는지를 보여줍니다. 기획, 데이터 정리, 구현, 배포, 운영까지 한 흐름으로 확인할 수 있습니다.</p>
+          <div class="action-row"><a class="link-chip" href="https://www.genspark.ai/api/files/s/ui6oKfRd" target="_blank" rel="noreferrer">원본 자료</a><a class="link-chip" href="https://visang-chatbot.vercel.app/" target="_blank" rel="noreferrer">챗봇 바로가기</a></div>
+        </article>
+      </section>
+      <section id="reconstructed" class="page-grid reveal">
+        <article class="content-panel">
+          <h2 class="panel-title">발표 내용 재구성</h2>
+          <div class="section-list"><article class="section-card"><span class="section-no">01</span><h3>문제 발견</h3><p>스콘 e-book과 PDF 관련 문의가 반복되면서 응대 효율 문제가 커졌습니다. 챗봇은 단순한 실험이 아니라 실제 고객 문의를 줄이기 위한 해법으로 출발합니다.</p></article><article class="section-card"><span class="section-no">02</span><h3>문의 유형 분류</h3><p>어떤 문의는 챗봇이 바로 답할 수 있고, 어떤 문의는 내부 확인이 필요합니다. 이 구분이 정확할수록 챗봇의 신뢰도와 운영 효율이 높아집니다.</p></article><article class="section-card"><span class="section-no">03</span><h3>도구 선택 전략</h3><p>ChatGPT, Claude, Genspark, Google AI Studio를 단계별 용도에 맞춰 조합합니다. 중요한 것은 최신 도구보다 업무 단계에 맞는 배치입니다.</p></article><article class="section-card"><span class="section-no">04</span><h3>데이터 구조화</h3><p>가입 경로, 자료 제공 범위, 교재 정보 같은 실무 데이터를 구조화해 챗봇 답변 기반을 만듭니다. AI 품질의 핵심은 결국 데이터 정리 수준입니다.</p></article><article class="section-card"><span class="section-no">05</span><h3>구현과 배포</h3><p>API 키 노출 이슈, 연결 오류, 배포 환경 문제를 해결하며 실제 웹앱 형태까지 구현합니다. 서비스 가능한 형태로 배포했다는 점이 이 발표의 강점입니다.</p></article><article class="section-card"><span class="section-no">06</span><h3>운영 시야</h3><p>챗봇은 배포 후가 더 중요합니다. 관리자 페이지, 답변 업데이트, 모델 업그레이드 계획까지 운영 관점이 함께 제시됩니다.</p></article></div>
+        </article>
+        <div class="side-stack">
+          <aside class="side-panel">
+            <h2 class="panel-title">하이라이트</h2>
+            <div class="highlight-list"><div class="highlight-item">도구보다 먼저 정리해야 할 것은 문제 정의다</div><div class="highlight-item">챗봇의 품질은 데이터 구조에서 결정된다</div><div class="highlight-item">실험에서 끝나지 않고 배포 가능한 서비스로 연결했다</div><div class="highlight-item">운영까지 고려해야 진짜 실무형 AI 프로젝트가 된다</div></div>
+          </aside>
+          <aside class="side-panel">
+            <h2 class="panel-title">핵심 포인트</h2>
+            <ul class="bullet-list"><li>반복 문의 자동화와 이관 기준을 함께 설계</li><li>여러 AI 도구를 단계별로 조합한 실무 전략 제시</li><li>GitHub·Vercel 기반 실제 배포 경험 포함</li><li>사후 운영과 업데이트 체계까지 고려한 설계</li></ul>
+          </aside>
+          <aside class="side-panel">
+            <h2 class="panel-title">회고 질문</h2>
+            <ol class="question-list"><li>우리 조직에서 가장 먼저 자동화할 수 있는 반복 문의는 무엇인가?</li><li>정확한 답변을 위해 어떤 데이터부터 표준화해야 하는가?</li><li>파일럿이 아닌 운영형 프로젝트로 가기 위해 필요한 조건은 무엇인가?</li></ol>
+          </aside>
+        </div>
+      </section>
+      <p class="footer-note reveal">상세 페이지는 발표 내용을 바로 읽기 좋게 웹 문서형으로 재구성한 버전입니다. 원본 자료는 상단 버튼에서 바로 열거나 다운로드할 수 있습니다.</p>
+    </div>
+  </main>
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('is-visible'); });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
