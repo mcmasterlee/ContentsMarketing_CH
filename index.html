@@ -71,7 +71,7 @@ const sessions = [{"id": "s1", "slug": "session-01-branding.html", "month": "03"
 
 sessions.push(
   {"id":"s7","slug":"session-07-going-vivasam.html","month":"08","date":"2026.08","time":"","type":"업무 혁신","title":"2026년 비바샘이 간다 대시보드","speaker":"김연희 CP","summary":"흩어진 일정·보고서·이슈 관리를 하나의 대시보드로 통합하고, 현장 의견의 개선 이력까지 추적할 수 있도록 만든 실무형 개선 사례.","overview":"‘비바샘이 간다’ 운영 과정에서 팀즈와 셰어포인트에 나뉘어 있던 일정, 결과 보고서, 주요 이슈와 조치 현황을 한 화면에 모았습니다. 비개발자가 바이브코딩으로 직접 구현해 확인 단계를 줄이고 현장 의견이 실제 개선으로 이어지는 과정을 추적 가능하게 만든 프로젝트입니다.","cover":"","sheet":"","tags":["운영 통합","바이브코딩","이슈 추적","대시보드"],"points":["팀즈·셰어포인트 기반 관리에서 발생한 확인 비효율 개선","별도 개발 리소스 없이 실제 작동하는 운영 페이지 완성","확인의 불편함과 개선 이력 부재를 기능 설계로 해결"],"links":[["대시보드 바로가기","https://goingvivasam.vercel.app/"]]},
-  {"id":"s8","slug":"session-08-ai-recommendation.html","month":"09","date":"2026.09.08","time":"","type":"AI 마케팅","title":"AI 시대 우리의 마케팅 방향은?","speaker":"김동남 CP","summary":"검색의 종착지가 링크에서 AI 답변으로 이동하는 변화에 맞춰, 비상교육이 AI 추천의 근거로 선택되기 위한 2027 콘텐츠 전략과 측정 체계를 제안한 발표.","overview":"고객이 검색 결과를 클릭하는 단계에서 AI가 비교하고 추천하는 단계로 이동하고 있다는 문제의식에서 출발합니다. 공식 정보, 전문 콘텐츠, 실제 후기, 상품 데이터의 일관성을 높이고 고객 질문을 기준으로 콘텐츠를 설계해 AI 답변의 추천 후보에 진입하는 전략을 설명합니다.","cover":"","sheet":"","pdf_asset":"./2027_AI_Recommendation_Marketing_Briefing_FINAL.pptx","hero_image":"./assets/images/s8-ai-meeting.jpg","hero_image_alt":"2026년 9월 크리에이티브 한입 모임 사진","hero_image_caption":"2026년 9월 크리에이티브 한입 모임 현장","tags":["AI 추천","질문 점유","근거 설계","AI-SOR"],"points":["AI를 별도 운영 채널이 아니라 여러 근거 채널이 만드는 결과 채널로 정의","고객의 실제 질문을 콘텐츠 기획과 성과 측정의 공통 단위로 제안","AI-SOR = 자사 브랜드 추천 응답 수 ÷ 전체 추천형 응답 수 × 100"],"links":[["발표 자료 열기","./2027_AI_Recommendation_Marketing_Briefing_FINAL.pptx"]]}
+  {"id":"s8","slug":"session-08-ai-recommendation.html","month":"09","date":"2026.09.08","time":"","type":"AI 마케팅","title":"AI 시대 우리의 마케팅 방향은?","speaker":"김동남 CP","summary":"검색의 종착지가 링크에서 AI 답변으로 이동하는 변화에 맞춰, 비상교육이 AI 추천의 근거로 선택되기 위한 2027 콘텐츠 전략과 측정 체계를 제안한 발표.","overview":"고객이 검색 결과를 클릭하는 단계에서 AI가 비교하고 추천하는 단계로 이동하고 있다는 문제의식에서 출발합니다. 공식 정보, 전문 콘텐츠, 실제 후기, 상품 데이터의 일관성을 높이고 고객 질문을 기준으로 콘텐츠를 설계해 AI 답변의 추천 후보에 진입하는 전략을 설명합니다.","cover":"","sheet":"","pdf_asset":"./assets/pdfs/2027_AI_Recommendation_Marketing_Briefing_FINAL.pptx","hero_image":"./assets/images/s8-ai-meeting.jpg","hero_image_alt":"2026년 9월 크리에이티브 한입 모임 사진","hero_image_caption":"2026년 9월 크리에이티브 한입 모임 현장","tags":["AI 추천","질문 점유","근거 설계","AI-SOR"],"points":["AI를 별도 운영 채널이 아니라 여러 근거 채널이 만드는 결과 채널로 정의","고객의 실제 질문을 콘텐츠 기획과 성과 측정의 공통 단위로 제안","AI-SOR = 자사 브랜드 추천 응답 수 ÷ 전체 추천형 응답 수 × 100"],"links":[["발표 자료 열기","./assets/pdfs/2027_AI_Recommendation_Marketing_Briefing_FINAL.pptx"]]}
 );
 
 function cardTemplate(session){
@@ -85,7 +85,7 @@ function cardTemplate(session){
     ? '원본 자료'
     : ((resourceName.includes('웹앱') || resourceName.includes('대시보드') || resourceName.includes('바로가기')) ? resourceName : '원본 자료');
   const resourceBtn = primaryLink
-    ? `<a class="topic-btn secondary" href="https://contents-marketing-ch.vercel.app/${primaryLink}" target="_blank" rel="noreferrer">${primaryLabel}</a>`
+    ? `<a class="topic-btn secondary" href="${primaryLink}" target="_blank" rel="noopener noreferrer">${primaryLabel}</a>`
     : '';
   const chatbotLink = session.links && session.links.length
     ? session.links.find(link => link[0].includes('챗봇'))
